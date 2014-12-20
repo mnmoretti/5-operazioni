@@ -1,29 +1,105 @@
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+#include <stdio.h>
+#include <stdlib.h>
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+int main() {
+    
+    float x;
+    float y;
+    int z;
+    float r;
+    int r2;
+    int i=0;
+    float risultato;
+    float d;
+    
+    
+    printf("seleziona l' operazione da svolgere\n\n");
+    
+    printf("1.addizione\n2.sottrazione\n3.moltiplicazione\n4.divisione\n5.potenza\n");
+    scanf("%d" ,&z);
+    switch (z) {
+    
+	    case 1:
+            printf("addizione\n");
+           
+            printf("inserisci il primo numero: ");
+            scanf("%f" ,&x);
+            
+            printf("inserisci il secondo numero ");
+            scanf("%f" ,&y);
+           
+            r=x+y;
+            printf("risultato: %f\n" ,r);
+            break;
+        case 2:
+            printf("sottrazione\n");
+            
+            printf("inserisci il primo numero: ");
+            scanf("%f" ,&x);
+            
+            printf("inserisci il secondo numero ");
+            scanf("%f" ,&y);
+            
+            r=x-y;
+            printf("risultato: %f\n" ,r);
+            break;
+        case 3:
+            printf("moltiplicazione\n");
+           
+            printf("inserisci il primo numero: ");
+            scanf("%f" ,&x);
+            
+            printf("inserisci il secondo numero ");
+            scanf("%f" ,&y);
+           
+            r=x*y;
+            printf("risultato: %f\n" ,r);
+            break;
+        case 4:
+            printf("divisione\n");
+            
+            printf("inserisci il primo numero: ");
+            scanf("%f" ,&x);
+            
+            printf("inserisci il secondo numero: ");
+            scanf("%f" ,&y);
+            
+            r=x/y;
+            
+            r2= (int)x/(int)y;
+            
+            d=r-r2;
+            
+            printf("risultato...\n");
+            printf("divisione completa: %f\n" ,r);
+            printf("parte intera: %d\n" ,r2);
+            printf("parte decimale: %f\n" ,d);
+            break;
+        case 5:
+            printf("potenza\n");
+            
+            printf("inserisci il numero: ");
+            scanf("%f" ,&x);
+            
+            printf("a quanto vuoi elevare il numero? : "); 
+            scanf("%f" ,&y);
+            
+            risultato=1;
+            while(i<y) {
+                risultato=y*risultato;
+                i=i+1;
+            }
+            
+           
+            printf("\nil risultato e': %f\n" ,risultato);
+            break;    
+    
+	        default:
+            printf("errore: scelta non valida");
+        
+            
+        }
+        
+        system("pause");
+        return 0;
+}
